@@ -1,12 +1,12 @@
 class Walker {
   constructor(height, width) {
-    this.x = Math.random() * width;
-    this.y = Math.random() * height;
+    this.x = Math.floor(Math.random() * width);
+    this.y = Math.floor(Math.random() * height);
   }
 
   walk() {
-    this.x += Math.random() * 2 - 1;
-    this.y += Math.random() * 2 - 1;
+    this.x += Math.floor(Math.random() * 3) - 1;
+    this.y += Math.floor(Math.random() * 3) - 1;
   }
 
   draw(ctx) {
