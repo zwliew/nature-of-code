@@ -15,7 +15,7 @@ class Canvas {
   step() {
     const num = Math.floor(Math.random() * 20);
     this.counts[num].increment(this.height);
-    this.counts.forEach(count => count.draw(this.ctx, this.width / 20));
+    this.counts.forEach(count => count.draw(this.ctx, this.width / 20, this.height));
   }
 }
 

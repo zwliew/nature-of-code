@@ -9,9 +9,9 @@ class Number {
     this.count++;
   }
 
-  draw(ctx, width) {
+  draw(ctx, width, maxHeight) {
     ctx.fillStyle = 'black';
-    ctx.fillRect(width * this.id, 0, width, this.count);
+    ctx.fillRect(width * this.id, maxHeight, width, -this.count);
   }
 }
 
