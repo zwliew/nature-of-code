@@ -1,14 +1,12 @@
 import Walker from './walker.js';
 
 class Canvas {
-  constructor(width, height, ctx) {
-    this.width = width;
-    this.height = height;
+  constructor(ctx) {
     this.ctx = ctx;
 
     this.walkers = [];
     for (let i = 0; i < 50; i++) {
-      this.walkers.push(new Walker(this.height, this.width));
+      this.walkers.push(new Walker(this.ctx.canvas.width, this.ctx.canvas.height));
     }
   }
 

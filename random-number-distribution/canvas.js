@@ -1,9 +1,7 @@
 import Count from './count.js';
 
 class Canvas {
-  constructor(width, height, ctx) {
-    this.width = width;
-    this.height = height;
+  constructor(ctx) {
     this.ctx = ctx;
 
     this.counts = [];
@@ -14,8 +12,10 @@ class Canvas {
 
   step() {
     const num = Math.floor(Math.random() * 20);
-    this.counts[num].increment(this.height);
-    this.counts.forEach(count => count.draw(this.ctx, this.width / 20, this.height));
+    this.counts[num].increment(this.ctx.canvas.height);
+    this.counts.forEach(count => count.draw(
+      this.ctx, this.ctx.canvas.width / 20, this.ctx.canvas.height
+    ));
   }
 }
 

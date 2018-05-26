@@ -1,5 +1,5 @@
 class Walker {
-  constructor(height, width) {
+  constructor(width, height) {
     this.x = Math.floor(Math.random() * width);
     this.y = Math.floor(Math.random() * height);
   }
