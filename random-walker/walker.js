@@ -5,8 +5,16 @@ class Walker {
   }
 
   walk() {
-    this.x += Math.floor(Math.random() * 3) - 1;
-    this.y += Math.floor(Math.random() * 3) - 1;
+    const rand = Math.random();
+    if (rand < 0.2) {
+      this.y--;
+    } else if (rand < 0.4) {
+      this.y++;
+    } else if (rand < 0.6) {
+      this.x--;
+    } else {
+      this.x++;
+    }
   }
 
   draw(ctx) {
