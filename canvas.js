@@ -1,4 +1,5 @@
-import RandomWalkerCanvas from './random-walker/canvas.js';
+import RandomWalker from './random-walker/canvas.js';
+import RandomNumberDistribution from './random-number-distribution/canvas.js';
 
 class Canvas {
   constructor(canvas) {
@@ -12,11 +13,13 @@ class Canvas {
   customCanvas(choice) {
     const w = this.width;
     const h = this.height;
-    const ctx = this.ctx;
+    const c = this.ctx;
 
     switch (choice) {
       case 'random-walker':
-        return new RandomWalkerCanvas(w, h, ctx);
+        return new RandomWalker(w, h, c);
+      case 'random-number-distribution':
+        return new RandomNumberDistribution(w, h, c);
       default:
         return undefined;
     }
