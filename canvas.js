@@ -23,7 +23,7 @@ class Canvas {
   }
 
   start(window) {
-    this.canvas = this.customCanvas('random-walker');
+    this.canvas = this.customCanvas();
     this.window = window;
     this.requestId = this.window.requestAnimationFrame(this.loop.bind(this));
     return () => this.stop();
@@ -38,9 +38,11 @@ class Canvas {
   }
 
   loop() {
-    if (this.canvas) {
-      this.canvas.step();
+    if (!this.canvas) {
+      console.log('No canvas selected.');
+      return;
     }
+    this.canvas.step();
     this.requestId = this.window.requestAnimationFrame(this.loop.bind(this));
   }
 }
